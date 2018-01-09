@@ -18,3 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::resource('saracasam','saracasamapicontroller');
 
+Route::post('login', 'API\UserController@login');
+Route::post('register', 'API\UserController@register');
+
+
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::post('getdetails', 'api\UserController@details');
+});

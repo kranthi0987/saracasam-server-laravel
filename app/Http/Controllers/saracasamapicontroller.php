@@ -22,7 +22,14 @@ class saracasamapicontroller extends Controller
         $response["success"] = 1;
         $response["count"]= $users;
       //  return response()->json(array($response), 200);
-       return $json_str = json_encode($response);
+        $sorted = collect($response)->sortBy('created_at');
+
+        $sorted->values()->all();
+
+        return $json_str = json_encode($sorted);
+
+//        $testingItem = saracasam::orderByRaw('DATE(created_at)')->orderBy('imagepath', 'asc');
+//        echo $testingItem;
    // return $response->toJson();
     }
 
