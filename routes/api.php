@@ -17,7 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::resource('saracasam','saracasamapicontroller');
+//pawnapi controller
 
+Route::resource('pawnapi','pawnapicontroller');
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 

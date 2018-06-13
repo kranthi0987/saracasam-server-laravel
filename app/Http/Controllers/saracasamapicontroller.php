@@ -74,6 +74,7 @@ class saracasamapicontroller extends Controller
             $data->tag = $request->tag;
 //            $data->photo = $filename;
             $data->save();
+            $data['success']='1';
             return response()->json(['data' => $data], 201);
         }
 //        return response()->json(['data' => $sarapi], 200);
