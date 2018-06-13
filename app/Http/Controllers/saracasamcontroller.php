@@ -28,7 +28,7 @@ class saracasamcontroller extends Controller
 
             $file->move("images/", $fileName);
 
-            $sar->imagepath = "http://localhost:8000/images/" . $fileName;
+            $sar->imagepath = "http://api.aroundtirupati.com/images/" . $fileName;
             $sar->imagename = $request->imagename;
 //            $sar->move(public_path(), '/images', $sar->getClientOriginalName());
 //            Input::file('photo')->move(public_path(),'/images', $sar->getClientOriginalName());
